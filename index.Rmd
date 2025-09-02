@@ -1,6 +1,6 @@
 ---
-title: "index"
-subtitle: ''
+title: "Introduction to R"
+subtitle: 'BIOL 4994/4991'
 author: "Ariana Negroni Santiago"
 date: "Last compiled on `r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
 output:
@@ -8,9 +8,13 @@ output:
     theme: tactile
     highlight: github
 ---
-```{r, echo = F}
+
+<div style="text-align: center;">
+
+```{r, echo=FALSE}
 knitr::include_graphics("~/Pre-medica/Quinto año/R/Intro_R/perfil.jpg")
-```  
+``` 
+</div>
 
 # Enlaces
 [myGithub](https://github.com/ariananegroni)  
