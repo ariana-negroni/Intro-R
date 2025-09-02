@@ -17,24 +17,20 @@ knitr::include_graphics("~/Pre-medica/Quinto año/R/Intro_R/perfil.jpg")
 </div>
 
 # Enlaces
-[myGithub](https://github.com/ariananegroni)  
-[themes](http://jekyllthemes.org/page5/)
+[My Github](https://github.com/ariana-negroni)  
+[Themes](http://jekyllthemes.org/page5/)
 
 ### To do list  
   1. Terminar preguntas  
-      - fisica
-      - quimica
-      - organica
   2. Repasar flashcards
   3. Verificar tareas de mañana
   4. Escriberle a mi PI
-  5. Solicitar ABRCMS
 
 # Horario  
 |Hora|Dia|Clase|
 |:----:|---|:-----:|
 |10:30-11:30|L W V|Sintesis de drogas|
-|12:30-4:30|W|Laboratorio de Bioquimica|
+|12:30-4:30|W|Laboratorio de Bioquímica|
 |8:30-9:45|M J|Evolución|
 |3:30-5:50|M J|R|
 
