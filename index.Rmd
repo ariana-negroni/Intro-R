@@ -18,13 +18,18 @@ knitr::include_graphics("~/Pre-medica/Quinto año/R/Intro_R/perfil.jpg")
 
 # Enlaces
 [My Github](https://github.com/ariana-negroni)  
+[My LinkedIn](www.linkedin.com/in/ariananegroni)  
 [Themes](http://jekyllthemes.org/page5/)
 
-### To do list  
-  1. Terminar preguntas  
-  2. Repasar flashcards
-  3. Verificar tareas de mañana
-  4. Escriberle a mi PI
+### Sobre mi
+Soy estudiante de quinto año de Biología con concetración menor en Ciencia Cognitiva y certificación en Bioquímica de la Universidad de Puerto Rico, recinto de Mayagüez.
+Mi meta es hacer un grado doctoral en ciencia molecular y translacional, donde me enfocaría
+en avanzar la ciencia biomédica hacia problemas actuales de la salud. Mi experiencia en investigación
+se a centrado en expresión de hemoproteinas y su reacción fisiologica con sulfuro de hidrogeno.
+Por otro lado, también tuve la oportunidad de trabajar en un proyecto de verano enfocado
+en cancer de pulmón, especificamente la ruta metastática del mismo, en el Centro de Cancer
+MD Anderson de la Universidad de Texas.
+
 
 # Horario  
 |Hora|Dia|Clase|
