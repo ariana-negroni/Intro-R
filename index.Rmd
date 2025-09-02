@@ -8,7 +8,7 @@ output:
     theme: cayman
     highlight: github
 ---
-```{r}
+```{r, echo = F}
 knitr::include_graphics("~/Pre-medica/Quinto año/R/Intro_R/perfil.jpg")
 ```  
 
