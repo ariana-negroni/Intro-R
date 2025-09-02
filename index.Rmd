@@ -1,0 +1,35 @@
+---
+title: "index"
+subtitle: ''
+author: "Ariana Negroni Santiago"
+date: "Last compiled on `r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+```{r}
+knitr::include_graphics("~/Pre-medica/Quinto año/R/Intro_R/perfil.jpg")
+```  
+
+# Enlaces
+[myGithub](https://github.com/ariananegroni)  
+[themes](http://jekyllthemes.org/page5/)
+
+### Tareas  
+  1. Terminar preguntas  
+      - fisica
+      - quimica
+      - organica
+  2. Repasar flashcards
+  3. Verificar tareas de mañana
+  4. Escriberle a mi PI
+  5. Solicitar ABRCAMS
+
+# Horario  
+|Hora|Dia|Clase|
+|:----:|---|:-----:|
+|10:30-11:30|L W V|Sintesis de drogas|
+|12:30-4:30|W|Laboratorio de Bioquimica|
+|8:30-9:45|M J|Evolución|
+|3:30-5:50|M J|R|
