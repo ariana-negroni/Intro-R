@@ -5,7 +5,7 @@ author: "Ariana Negroni Santiago"
 date: "Last compiled on `r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
 output:
   prettydoc::html_pretty:
-    theme: cayman
+    theme: tactile
     highlight: github
 ---
 ```{r, echo = F}
@@ -16,7 +16,7 @@ knitr::include_graphics("~/Pre-medica/Quinto año/R/Intro_R/perfil.jpg")
 [myGithub](https://github.com/ariananegroni)  
 [themes](http://jekyllthemes.org/page5/)
 
-### Tareas  
+### To do list  
   1. Terminar preguntas  
       - fisica
       - quimica
@@ -24,7 +24,7 @@ knitr::include_graphics("~/Pre-medica/Quinto año/R/Intro_R/perfil.jpg")
   2. Repasar flashcards
   3. Verificar tareas de mañana
   4. Escriberle a mi PI
-  5. Solicitar ABRCAMS
+  5. Solicitar ABRCMS
 
 # Horario  
 |Hora|Dia|Clase|
@@ -33,3 +33,6 @@ knitr::include_graphics("~/Pre-medica/Quinto año/R/Intro_R/perfil.jpg")
 |12:30-4:30|W|Laboratorio de Bioquimica|
 |8:30-9:45|M J|Evolución|
 |3:30-5:50|M J|R|
+
+# R Tutorials
+### Tarea 1
