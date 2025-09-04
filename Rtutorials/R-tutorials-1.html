@@ -357,8 +357,136 @@ display: none;
 </div>
 
 
-<div id="instrucciones" class="section level2">
-<h2>Instrucciones</h2>
+<div id="instructions" class="section level1">
+<h1>Instructions</h1>
+<ul>
+<li>This assignment consists of 10 questions, each worth 10 points.</li>
+<li>Write your answers in R code chunks whenever applicable.</li>
+<li>Make sure your code runs without errors. Include comments if
+necessary.</li>
+<li>For questions about chunk options, experiment with the options and
+write down your observations.</li>
+<li>Submit the assignment on your personal webpages using the HTML file
+exported/knit from the .Rmd.</li>
+<li>Do not copy output screenshots unless requested.</li>
+</ul>
+<div id="assigning-values" class="section level3">
+<h3>Assigning values</h3>
+<ol style="list-style-type: decimal">
+<li>Create an object called height with the value 175. Print it.</li>
+</ol>
+<pre class="r"><code>height &lt;- 175
+height</code></pre>
+<pre><code>## [1] 175</code></pre>
+</div>
+<div id="simple-math" class="section level3">
+<h3>Simple math</h3>
+<ol start="2" style="list-style-type: decimal">
+<li>Calculate the result of 25 * 4 - 10.</li>
+</ol>
+<pre class="r"><code>25*4-10</code></pre>
+<pre><code>## [1] 90</code></pre>
+</div>
+<div id="using-functions" class="section level3">
+<h3>Using functions</h3>
+<ol start="3" style="list-style-type: decimal">
+<li>Use the function sqrt() to calculate the square root of 81.</li>
+</ol>
+<pre class="r"><code>sqrt(81)</code></pre>
+<pre><code>## [1] 9</code></pre>
+</div>
+<div id="character-objects" class="section level3">
+<h3>Character objects</h3>
+<ol start="4" style="list-style-type: decimal">
+<li>Assign the phrase “R is fun!” to an object called message. Print
+it.</li>
+</ol>
+<pre class="r"><code>message &lt;- &quot;R is fun!&quot;
+message</code></pre>
+<pre><code>## [1] &quot;R is fun!&quot;</code></pre>
+</div>
+<div id="object-manipulation" class="section level3">
+<h3>Object manipulation</h3>
+<ol start="5" style="list-style-type: decimal">
+<li>Create two objects a &lt;- 10 and b &lt;- 5. Calculate their sum and
+store it in c. </li>
+</ol>
+<pre class="r"><code>a &lt;- 10
+b &lt;- 5
+c &lt;- a + b
+c</code></pre>
+<pre><code>## [1] 15</code></pre>
+</div>
+<div id="logical-comparison" class="section level3">
+<h3>Logical comparison</h3>
+<ol start="6" style="list-style-type: decimal">
+<li>Test whether 15 is greater than 20.</li>
+</ol>
+<pre class="r"><code>15&gt;20</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+</div>
+<div id="checking-classes" class="section level3">
+<h3>Checking classes</h3>
+<ol start="7" style="list-style-type: decimal">
+<li>Check the class of the object “Hello World”.</li>
+</ol>
+<pre class="r"><code>class(&quot;Hello World&quot;)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+</div>
+<div id="code-chunk-options" class="section level3">
+<h3>Code chunk options</h3>
+<ol start="8" style="list-style-type: decimal">
+<li>Run the following code chunk:<br />
+</li>
+</ol>
+<ul>
+<li>Observe the warnings that appear.<br />
+</li>
+<li>Modify the chunk options to suppress warnings without changing the
+code itself.<br />
+log(-1)<br />
+## Warning in log(-1): NaNs produced<br />
+## [1] NaN</li>
+</ul>
+<pre class="r"><code>log(-1)</code></pre>
+<pre><code>## [1] NaN</code></pre>
+</div>
+<div id="code-chunk-options-1" class="section level3">
+<h3>Code chunk options</h3>
+<ol start="9" style="list-style-type: decimal">
+<li>Run the following code chunk: - Observe the messages that appear.
+Modify the chunk options to suppress messages without changing the code
+itself.<br />
+# Load a package (may produce messages)<br />
+library(dplyr)<br />
+## Warning: package ‘dplyr’ was built under R version 4.4.3<br />
+##<br />
+## Attaching package: ‘dplyr’<br />
+## The following objects are masked from ‘package:stats’:<br />
+##<br />
+## filter, lag<br />
+## The following objects are masked from ‘package:base’:<br />
+##<br />
+## intersect, setdiff, setequal, union</li>
+</ol>
+<pre class="r"><code>library(dplyr)</code></pre>
+</div>
+<div id="help-files" class="section level3">
+<h3>Help files</h3>
+<ol start="10" style="list-style-type: decimal">
+<li>Use R’s help system to find out what the function mean() does.</li>
+</ol>
+<pre class="r"><code>?mean()</code></pre>
+<pre><code>## starting httpd help server ... done</code></pre>
+</div>
+<div id="sum" class="section level3">
+<h3>Sum</h3>
+<ol start="11" style="list-style-type: decimal">
+<li>Sum 5+10</li>
+</ol>
+<pre class="r"><code>5+10</code></pre>
+<pre><code>## [1] 15</code></pre>
+</div>
 </div>
 
 

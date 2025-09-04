@@ -5,4 +5,118 @@ date: "2025-09-04"
 output: html_document
 ---
 
-## Instrucciones
+# Instructions 
+- This assignment consists of 10 questions, each worth 10 points.
+- Write your answers in R code chunks whenever applicable.
+- Make sure your code runs without errors. Include comments if necessary.
+- For questions about chunk options, experiment with the options and write down your observations.
+- Submit the assignment on your personal webpages using the HTML file exported/knit from the .Rmd.
+- Do not copy output screenshots unless requested.
+
+
+
+### Assigning values
+1. Create an object called height with the value 175. Print it. 
+
+```{r}
+height <- 175
+height
+```
+
+
+### Simple math
+2. Calculate the result of 25 * 4 - 10.
+
+```{r}
+25*4-10
+```
+
+### Using functions
+3. Use the function sqrt() to calculate the square root of 81. 
+
+```{r}
+sqrt(81)
+```
+
+### Character objects
+4. Assign the phrase “R is fun!” to an object called message. Print it. 
+
+```{r}
+message <- "R is fun!"
+message
+```
+
+### Object manipulation
+5. Create two objects a <- 10 and b <- 5. Calculate their sum and store it in c. 
+
+```{r}
+a <- 10
+b <- 5
+c <- a + b
+c
+```
+
+### Logical comparison
+6. Test whether 15 is greater than 20.
+
+```{r}
+15>20
+```
+
+### Checking classes
+7. Check the class of the object "Hello World".
+
+```{r}
+class("Hello World")
+```
+
+### Code chunk options
+8. Run the following code chunk:  
+- Observe the warnings that appear.   
+- Modify the chunk options to suppress warnings without changing the code itself.   
+log(-1)  
+## Warning in log(-1): NaNs produced  
+## [1] NaN  
+
+```{r, warning=FALSE}
+log(-1)
+
+```
+
+### Code chunk options
+9. Run the following code chunk: - Observe the messages that appear. 
+Modify the chunk options to suppress messages without changing the code itself.   
+# Load a package (may produce messages)  
+library(dplyr)  
+## Warning: package 'dplyr' was built under R version 4.4.3  
+##   
+## Attaching package: 'dplyr'  
+## The following objects are masked from 'package:stats':  
+##   
+##     filter, lag  
+## The following objects are masked from 'package:base':  
+##   
+##     intersect, setdiff, setequal, union   
+
+```{r, message=FALSE}
+
+library(dplyr)
+
+```
+
+### Help files
+10. Use R’s help system to find out what the function mean() does.
+
+```{r}
+?mean()
+```
+
+
+### Sum
+11.  Sum 5+10
+
+
+```{r}
+5+10
+```
+
