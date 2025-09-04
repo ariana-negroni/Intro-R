@@ -31,13 +31,5 @@ en cancer de pulmón, especificamente la ruta metastática del mismo, en el Cent
 MD Anderson de la Universidad de Texas.
 
 
-# Horario  
-|Hora|Dia|Clase|
-|:----:|---|:-----:|
-|10:30-11:30|L W V|Sintesis de drogas|
-|12:30-4:30|W|Laboratorio de Bioquímica|
-|8:30-9:45|M J|Evolución|
-|3:30-5:50|M J|R|
-
 # R Tutorials
-### Tarea 1
+[Tarea 1](C:/Users/arian/OneDrive/Documentos/Pre-medica/Quinto año/R/Intro_R/Intro-R/R tutorials/R-tutorials-1.html)
