@@ -32,4 +32,4 @@ MD Anderson de la Universidad de Texas.
 
 
 # R Tutorials
-[Tarea 1](C:/Users/arian/OneDrive/Documentos/Pre-medica/Quinto año/R/Intro_R/Intro-R/R tutorials/R-tutorials-1.html)
+[Tarea 1]("~/Pre-medica/Quinto año/R/Intro_R/Intro-R/R tutorials/R-tutorials-1.html")
