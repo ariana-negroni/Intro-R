@@ -1,0 +1,124 @@
+---
+title: "R Tutorial 2"
+subtitle: 'BIOL 4994/4991'
+author: "Ariana Negroni Santiago"
+date: "Last compiled on `r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
+---
+
+# Instructions
+- This assignment consists of 10 questions, each worth 10 points.
+- Write your answers in R code chunks whenever applicable.
+- Make sure your code runs without errors. Include comments if necessary.
+- For questions about chunk optins, experiment with the options and write down your observations.
+- Submit the assignment on your personal webpages using the HTML file exported/knit from the .Rmd. Do not copy output screenshots unless requested.
+
+
+### Using functions
+1. Convert the built-in dataset BOD to a list and print the list. 
+
+```{r}
+BOD_df <- as.data.frame(BOD)
+# BOD (Biochemical Oxygen Demand) is pre-defined Vector in R.
+BOD_df
+# Data Frame → List 
+list_from_df <- as.list(BOD_df)
+list_from_df
+```
+
+### Converting matrix into DataFrame
+2. Convert the following data frame into a data frame and print the matrix.
+
+```{r}
+# Data frame 1
+df1=data.frame(
+  "Name"=c("a","b","c","d"),
+  "Age"=c(12,34,23,67),
+  "BMI"=c(22,12,10,11),
+  "Country"=c("Malaysia","India","Spain","England"))
+print(df1)
+class(df1)
+# Data Frame → Matrix 
+matrix_from_df <- as.matrix(df1)
+matrix_from_df
+```
+
+### Accessing 1st & 2nd rows
+3. Create and print data frame
+
+```{r}
+# Data frame 2
+df=data.frame(
+  A=c("Raju","Kumar","Chandru","Deepak","Raina", "Dhoni", "Hema", "Vandana", "Bela","Anand" ),
+  B=c(12,34,23,67,23,43,23,38,34,12),
+  C=c("M","M","M","M","M","M","F","F","F","M"),
+  D=c("Malaysia","India","Spain","England", "Malaysia", "Malaysia", "India", "Egypt", "Italy", "Peru"))
+names(df)<-c("Name", "Age", "Gender","Country" )
+print(df)
+class(df)
+```
+4. Create a subset of the df dataset that includes only the first and second rows. Print the subset.
+```{r}
+# Subset of previous Data frame 2
+subset_df<-df[c(1,2), ] # first and second row
+subset_df
+```
+
+### Sorting the dataframe
+5. Sort the df from Q3 by the Age column in ascending order. Print the sorted data frame. 
+
+```{r}
+#Sorted data frame 2 by age
+df[order(df$Age), ]
+
+```
+
+### Adding a new column
+6. Add a new column called Score to the df from Q3 with the following values: 85, 90, 78, 88, 90, 92, 80, 90, 87, 100. Print the updated data frame. 
+
+```{r}
+#New data frame 2 with new column
+dfscore <- df
+dfscore$Score <- c(85, 90, 78, 88, 90, 92, 80, 90, 87, 100)
+dfscore
+```
+
+### Filtering rows with a condition
+7. From the df in Q3, create a subset where Age is greater than 30. Print the subset.
+
+```{r}
+#Subset of data frame 2 with age greater than 30
+df_subset2 <- subset(df, Age > 30) 
+df_subset2
+```
+
+### Renaming columns
+8. Rename the columns of df from Q3 as Person, Years, Gender, and Nation. Print the updated data frame.
+
+```{r}
+#Data frame 2 with new columns name
+df_newcolumns_names <- df
+colnames(df_newcolumns_names) <- c("Person", "Years", "Gender", "Nation")
+df_newcolumns_names
+```
+
+### Selecting multiple conditions
+9. From the df in Q2, select rows where Age is greater than 20 and BMI is less than 15. Print the subset.
+
+```{r}
+# Data frame 1 subset 
+subset_df1 <- subset(df1, Age > 20 & BMI < 15)
+subset_df1
+```
+
+### Summarizing a column
+10. Calculate the mean of the Age column from df in Q2. Print the result. 
+
+```{r}
+# Mean of age from Data frame 1
+mean_df1 <- mean(df1$Age)
+mean_df1
+```
