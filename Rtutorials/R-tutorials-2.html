@@ -153,7 +153,7 @@ code span.ot { color: #007020; }
 <h1 class="title toc-ignore">R Tutorial 2</h1>
 <h2 class="subtitle">BIOL 4994/4991</h2>
 <h3 class="author">Ariana Negroni Santiago</h3>
-<h3 class="date">Last compiled on 2025-Sep-15, 02:44 PM</h3>
+<h3 class="date">Last compiled on 2025-Sep-15, 03:00 PM</h3>
 </header>
 
 <hr>
@@ -232,7 +232,8 @@ matrix.</li>
 <div id="accessing-1st-2nd-rows" class="section level3">
 <h3>Accessing 1st &amp; 2nd rows</h3>
 <ol start="3" style="list-style-type: decimal">
-<li>Create and print data frame</li>
+<li>Create a subset of the df dataset that includes only the first and
+second row Print the subset.</li>
 </ol>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># Data frame 2</span></span>
 <span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">data.frame</span>(</span>
@@ -255,16 +256,33 @@ matrix.</li>
 ## 10   Anand  12      M     Peru</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">class</span>(df)</span></code></pre></div>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>Create a subset of the df dataset that includes only the first and
-second rows. Print the subset.</li>
-</ol>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># Subset of previous Data frame 2</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>subset_df<span class="ot">&lt;-</span>df[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), ] <span class="co"># first and second row</span></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>subset_df</span></code></pre></div>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>subsetrows_df<span class="ot">&lt;-</span>df[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), ] <span class="co"># first and second row</span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>subsetrows_df</span></code></pre></div>
 <pre><code>##    Name Age Gender  Country
 ## 1  Raju  12      M Malaysia
 ## 2 Kumar  34      M    India</code></pre>
+</div>
+<div id="accessing-1st-2nd-columns" class="section level3">
+<h3>Accessing 1st &amp; 2nd columns</h3>
+<ol start="4" style="list-style-type: decimal">
+<li>Create a subset of the df dataset that includes only the first and
+second column. Print the subset.</li>
+</ol>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co"># Subset of previous Data frame 2</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>subsetcolumns_df<span class="ot">&lt;-</span>df[ ,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)] <span class="co"># first and second columns</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>subsetcolumns_df</span></code></pre></div>
+<pre><code>##       Name Age
+## 1     Raju  12
+## 2    Kumar  34
+## 3  Chandru  23
+## 4   Deepak  67
+## 5    Raina  23
+## 6    Dhoni  43
+## 7     Hema  23
+## 8  Vandana  38
+## 9     Bela  34
+## 10   Anand  12</code></pre>
 </div>
 <div id="sorting-the-dataframe" class="section level3">
 <h3>Sorting the dataframe</h3>
@@ -272,8 +290,8 @@ second rows. Print the subset.</li>
 <li>Sort the df from Q3 by the Age column in ascending order. Print the
 sorted data frame.</li>
 </ol>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co">#Sorted data frame 2 by age</span></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>df[<span class="fu">order</span>(df<span class="sc">$</span>Age), ]</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co">#Sorted data frame 2 by age</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>df[<span class="fu">order</span>(df<span class="sc">$</span>Age), ]</span></code></pre></div>
 <pre><code>##       Name Age Gender  Country
 ## 1     Raju  12      M Malaysia
 ## 10   Anand  12      M     Peru
@@ -293,10 +311,10 @@ sorted data frame.</li>
 values: 85, 90, 78, 88, 90, 92, 80, 90, 87, 100. Print the updated data
 frame.</li>
 </ol>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co">#New data frame 2 with new column</span></span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>dfscore <span class="ot">&lt;-</span> df</span>
-<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>dfscore<span class="sc">$</span>Score <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">88</span>, <span class="dv">90</span>, <span class="dv">92</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">87</span>, <span class="dv">100</span>)</span>
-<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>dfscore</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="co">#New data frame 2 with new column</span></span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>dfscore <span class="ot">&lt;-</span> df</span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>dfscore<span class="sc">$</span>Score <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">88</span>, <span class="dv">90</span>, <span class="dv">92</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">87</span>, <span class="dv">100</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a>dfscore</span></code></pre></div>
 <pre><code>##       Name Age Gender  Country Score
 ## 1     Raju  12      M Malaysia    85
 ## 2    Kumar  34      M    India    90
@@ -315,9 +333,9 @@ frame.</li>
 <li>From the df in Q3, create a subset where Age is greater than 30.
 Print the subset.</li>
 </ol>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="co">#Subset of data frame 2 with age greater than 30</span></span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>df_subset2 <span class="ot">&lt;-</span> <span class="fu">subset</span>(df, Age <span class="sc">&gt;</span> <span class="dv">30</span>) </span>
-<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>df_subset2</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="co">#Subset of data frame 2 with age greater than 30</span></span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>df_subset2 <span class="ot">&lt;-</span> <span class="fu">subset</span>(df, Age <span class="sc">&gt;</span> <span class="dv">30</span>) </span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>df_subset2</span></code></pre></div>
 <pre><code>##      Name Age Gender  Country
 ## 2   Kumar  34      M    India
 ## 4  Deepak  67      M  England
@@ -331,10 +349,10 @@ Print the subset.</li>
 <li>Rename the columns of df from Q3 as Person, Years, Gender, and
 Nation. Print the updated data frame.</li>
 </ol>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="co">#Data frame 2 with new columns name</span></span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>df_newcolumns_names <span class="ot">&lt;-</span> df</span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="fu">colnames</span>(df_newcolumns_names) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Person&quot;</span>, <span class="st">&quot;Years&quot;</span>, <span class="st">&quot;Gender&quot;</span>, <span class="st">&quot;Nation&quot;</span>)</span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>df_newcolumns_names</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="co">#Data frame 2 with new columns name</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>df_newcolumns_names <span class="ot">&lt;-</span> df</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="fu">colnames</span>(df_newcolumns_names) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Person&quot;</span>, <span class="st">&quot;Years&quot;</span>, <span class="st">&quot;Gender&quot;</span>, <span class="st">&quot;Nation&quot;</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>df_newcolumns_names</span></code></pre></div>
 <pre><code>##     Person Years Gender   Nation
 ## 1     Raju    12      M Malaysia
 ## 2    Kumar    34      M    India
@@ -353,9 +371,9 @@ Nation. Print the updated data frame.</li>
 <li>From the df in Q2, select rows where Age is greater than 20 and BMI
 is less than 15. Print the subset.</li>
 </ol>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="co"># Data frame 1 subset </span></span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>subset_df1 <span class="ot">&lt;-</span> <span class="fu">subset</span>(df1, Age <span class="sc">&gt;</span> <span class="dv">20</span> <span class="sc">&amp;</span> BMI <span class="sc">&lt;</span> <span class="dv">15</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>subset_df1</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="co"># Data frame 1 subset </span></span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>subset_df1 <span class="ot">&lt;-</span> <span class="fu">subset</span>(df1, Age <span class="sc">&gt;</span> <span class="dv">20</span> <span class="sc">&amp;</span> BMI <span class="sc">&lt;</span> <span class="dv">15</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>subset_df1</span></code></pre></div>
 <pre><code>##   Name Age BMI Country
 ## 2    b  34  12   India
 ## 3    c  23  10   Spain
@@ -367,9 +385,9 @@ is less than 15. Print the subset.</li>
 <li>Calculate the mean of the Age column from df in Q2. Print the
 result.</li>
 </ol>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="co"># Mean of age from Data frame 1</span></span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>mean_df1 <span class="ot">&lt;-</span> <span class="fu">mean</span>(df1<span class="sc">$</span>Age)</span>
-<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>mean_df1</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="co"># Mean of age from Data frame 1</span></span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>mean_df1 <span class="ot">&lt;-</span> <span class="fu">mean</span>(df1<span class="sc">$</span>Age)</span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>mean_df1</span></code></pre></div>
 <pre><code>## [1] 34</code></pre>
 </div>
 </div>
