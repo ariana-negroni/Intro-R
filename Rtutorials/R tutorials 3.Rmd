@@ -1,0 +1,111 @@
+---
+title: "Assignment 3"
+subtitle: 'BIOL 4994/4991'
+author: "Ariana Negroni Santiago"
+date: "Last compiled on `r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
+---
+## Instructions:   
+- This assignment consists of 10 questions, each worth 10 points.   
+- Write your answers in R code chunks whenever applicable.   
+- Make sure your code runs without errors. Include comments if necessary.   
+- Always display at least 6 rows of output for each question using head(…, 6) or more, so you can clearly see the results in your HTML file.    
+- For questions about chunk options, experiment with the options and write down your observations.   
+- Submit the assignment on your personal webpages using the HTML file exported/knit from the .Rmd.    
+- Do not copy output screenshots unless requested.   
+
+### Install necessary packages (only run once if not installed). 
+
+```{r}
+# install.packages("gapminder")
+# install.packages("dplyr")
+library(dplyr)
+library(gapminder)
+data(gapminder)
+head(gapminder)
+```
+
+### 1. What class is the gapminder dataset? 
+
+```{r}
+class('gapminder')
+```
+
+### 2. Filter a section of gapminder with a life expectancy smaller than 29. 
+
+```{r}
+gapminder %>%
+  filter (lifeExp < 29)
+```
+
+### 3. Filter the dataset for the country Rwanda and for years greater than 1979. 
+
+```{r}
+rwanda <- gapminder %>%
+  filter(country == "Rwanda", year > 1979)
+rwanda
+```
+
+### 4. Create a new dataset from gapminder excluding the column gdpPercap. 
+
+```{r}
+newdataset <- gapminder %>% 
+  select(-gdpPercap)
+newdataset
+```
+
+### 5. Arrange the dataset in ascending order of lifeExp.
+
+```{r}
+lifeExp_asc <- gapminder %>% 
+  arrange(lifeExp)
+lifeExp_asc
+```
+
+
+### 6. Arrange the dataset in descending order of lifeExp.
+
+```{r}
+lifeExp_desc <- gapminder %>% 
+  arrange(desc(lifeExp))
+lifeExp_desc
+```
+
+### 7. Create a new dataset with only the columns year and lifeExp.
+
+```{r}
+newdataset_yearlifeexp <- gapminder %>% 
+  select(year, lifeExp)
+newdataset_yearlifeexp
+```
+
+### 8. Filter the dataset for the country Cambodia and show only the columns year and lifeExp. 
+
+```{r}
+cambodia <- gapminder %>% 
+  filter(country=="Cambodia") %>% 
+  select(year, lifeExp)
+cambodia
+```
+
+### 9. Select only the countries in Africa.
+```{r}
+africa <- gapminder %>% 
+  filter(continent=="Africa")
+africa
+```
+
+### 10. Create a new column called lifeExp_months that shows life expectancy in months. 
+
+```{r}
+lifeExp_months <- gapminder %>% 
+  mutate(lifeExp_months = lifeExp/12) %>% 
+  select(country, continent, year, lifeExp, lifeExp_months,everything())
+lifeExp_months
+```
+
+ 
+
