@@ -1,5 +1,5 @@
 ---
-title: "Assignment 3"
+title: "R Tutorial 3"
 subtitle: 'BIOL 4994/4991'
 author: "Ariana Negroni Santiago"
 date: "Last compiled on `r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
