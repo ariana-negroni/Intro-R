@@ -1,0 +1,38 @@
+---
+title: "Practice 3"
+subtitle: 'BIOL 4994/4991'
+author: "Ariana Negroni Santiago"
+date: "Last compiled on `r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
+---
+
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+#install.packages("knitr")
+#install.packages("gaawr2")
+#install.packages("kableExtra")
+#install.packages("gt")
+library(gaawr2)
+library(dplyr)
+library(kableExtra)
+library(knitr)
+library(gt)
+data(diabetes)
+head(diabetes)
+```
+
+
+```{r}
+kable(head(diabetes,5), booktabs = TRUE) %>% 
+  kable_styling(font_size=12)
+```
+
+
+```{r}
+kable(head(diabetes,5), booktabs = TRUE) %>% 
+  kable_styling(font_size = 12) %>% 
+  kable_styling(bootstrap_options = "striped", full_width=F)
+```
+

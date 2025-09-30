@@ -1,0 +1,16 @@
+---
+title: "Exam Practice"
+subtitle: 'BIOL 4994/4991'
+author: "Ariana Negroni Santiago"
+date: "Last compiled on `r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
+---
+
+```{r}
+library(readxl)
+library(dplyr)
+```
+
