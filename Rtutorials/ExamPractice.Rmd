@@ -14,3 +14,52 @@ library(readxl)
 library(dplyr)
 ```
 
+## Practice data manupulation using Base R   
+### Data from Cereal which includes:   
+- name: Brand name of cereal  
+- company: Manufacturer (G=General Mills, K=Kellog’s or Q=Quaker)   
+- serving: Serving size (in cups)
+- calories: Calories (per cup)
+- fat: Fat (grams per cup)
+- sodium: Sodium (mg per cup)
+- carbs: Carbohydrates (grams per cup)
+- fiber: Dietary Fiber (grams per cup)
+- sugars: Sugars (grams per cup)
+- protein: Protein (grams per cup)
+
+#### Open data
+```{r}
+cereal <- read_excel("cereal.xlsx")
+head(cereal)
+```
+## Five question ():
+1. Extract rows 1 to 10 from the cereal data frame. 
+```{r}
+rows10 <- subset(cereal[1:10, ])
+rows10
+```
+
+2. Create a new data frame called Kelloggs that only contains rows where company == “K”. 
+```{r}
+Kelloggs <- subset(cereal, company == "K")
+Kelloggs
+```
+
+3. From the cereal data, extract the names of all cereals that have more than 10 grams of sugar. 
+```{r}
+highsugar <- subset(cereal, sugars > 10)
+highsugar
+```
+
+4. Find the mean calories of all cereals in the dataset. 
+```{r}
+calories <- cereal$calories
+calories
+mean(calories)
+```
+
+5. Count how many cereals have fiber greater than or equal to 2 grams 
+```{r}
+length(cereal$fiber[cereal$fiber>=2])
+```
+
