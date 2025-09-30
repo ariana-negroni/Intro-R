@@ -32,7 +32,7 @@ library(dplyr)
 cereal <- read_excel("cereal.xlsx")
 head(cereal)
 ```
-## Five question ():
+## Five question:
 1. Extract rows 1 to 10 from the cereal data frame. 
 ```{r}
 rows10 <- subset(cereal[1:10, ])
