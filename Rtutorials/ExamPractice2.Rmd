@@ -1,0 +1,57 @@
+---
+title: "Exam Practice 2"
+subtitle: 'BIOL 4994/4991'
+author: "Ariana Negroni Santiago"
+date: "Last compiled on `r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
+---
+# Practice data manupulation using dplyr
+###The data in EquationCitations.csv includes information on the number of equations and citations for evolutionary biology publications. 
+
+The attributes included in the data are:
+-journal: Journal in which the paper was published (The American Naturalist, -Evolution, Proceedings of the Royal Society of London B: Biological Sciences)
+-authors: Names of authors
+-volume: Volume in which the paper was published
+-startpage: Starting page of publication
+-pages: Number of pages
+-equations: Number of equations in total
+-mainequations: Number of equations in main text
+-appequations: Number of equations in appendix
+-cites: Number of citations in total
+-selfcites: Number of citations by the authors themselves
+-othercites: Number of citations by other authors
+-theocites: Number of citations by theoretical papers
+-nontheocites: Number of citations by nontheoretical papers
+
+###The journal Proceedings of the National Academy of Sciences has asked you to revisit the data from Fawcett and Higginson (2012) on the use of equations in evolutionary biology papers. They are particularly interested in two things:
+
+```{r, message=FALSE}
+library(dplyr)
+library(readxl)
+articles <- read.csv("EquationCitations.csv")
+head(articles)
+```
+
+
+1. On average, how many equations per article are published in each journal? (Hint: use group_by() and summarise())
+
+```{r}
+articles %>% 
+  group_by(journal) %>% 
+    summarize (average_eq = mean(equations))
+```
+
+
+2. For each journal, calculate the average proportion of theoretical citations relative to total citations. (Hint: create a new column with mutate(theo_ratio = theocites / cites), then group_by() and summarise())
+
+```{r}
+articles %>% 
+  mutate(theo_ratio = theocites/cites) %>% 
+  group_by(journal) %>%
+    summarize (mean_theo = mean(theo_ratio))
+      
+```
+
