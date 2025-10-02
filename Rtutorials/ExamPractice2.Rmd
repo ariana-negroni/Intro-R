@@ -9,24 +9,24 @@ output:
     highlight: github
 ---
 # Practice data manupulation using dplyr
-###The data in EquationCitations.csv includes information on the number of equations and citations for evolutionary biology publications. 
+### The data in EquationCitations.csv includes information on the number of equations and citations for evolutionary biology publications. 
 
-The attributes included in the data are:
--journal: Journal in which the paper was published (The American Naturalist, -Evolution, Proceedings of the Royal Society of London B: Biological Sciences)
--authors: Names of authors
--volume: Volume in which the paper was published
--startpage: Starting page of publication
--pages: Number of pages
--equations: Number of equations in total
--mainequations: Number of equations in main text
--appequations: Number of equations in appendix
--cites: Number of citations in total
--selfcites: Number of citations by the authors themselves
--othercites: Number of citations by other authors
--theocites: Number of citations by theoretical papers
--nontheocites: Number of citations by nontheoretical papers
+The attributes included in the data are:   
+- journal: Journal in which the paper was published (The American Naturalist, Evolution, Proceedings of the Royal Society of London B: Biological Sciences)   
+- authors: Names of authors  
+- volume: Volume in which the paper was published   
+- startpage: Starting page of publication   
+- pages: Number of pages   
+- equations: Number of equations in total   
+- mainequations: Number of equations in main text   
+- appequations: Number of equations in appendix   
+- cites: Number of citations in total   
+- selfcites: Number of citations by the authors themselves   
+- othercites: Number of citations by other authors    
+- theocites: Number of citations by theoretical papers    
+- nontheocites: Number of citations by nontheoretical papers   
 
-###The journal Proceedings of the National Academy of Sciences has asked you to revisit the data from Fawcett and Higginson (2012) on the use of equations in evolutionary biology papers. They are particularly interested in two things:
+### The journal Proceedings of the National Academy of Sciences has asked you to revisit the data from Fawcett and Higginson (2012) on the use of equations in evolutionary biology papers. They are particularly interested in two things:
 
 ```{r, message=FALSE}
 library(dplyr)
