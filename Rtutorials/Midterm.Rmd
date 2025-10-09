@@ -9,7 +9,7 @@ output:
     highlight: github
 ---
 
-## General Instructions / Instrucciones Generales   
+## General Instructions 
 - This is the Midterm-Exam. Each question is worth 20 points.    
 - You must choose 5 out of the 6 questions to answer. Your maximum score is therefore 100 points.    
 - It is highly recommended that all your results, including tables and outputs, are always visible in your R Markdown document.     
