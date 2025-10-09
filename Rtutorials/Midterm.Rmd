@@ -8,3 +8,79 @@ output:
     theme: tactile
     highlight: github
 ---
+
+## General Instructions / Instrucciones Generales   
+- This is the Midterm-Exam. Each question is worth 20 points.    
+- You must choose 5 out of the 6 questions to answer. Your maximum score is therefore 100 points.    
+- It is highly recommended that all your results, including tables and outputs, are always visible in your R Markdown document.     
+- The exam must be completed and submitted during class time, on Thursday, October 9, 2025, from 3:00 to 6:00 PM.    
+- Use R and the tidyverse packages to answer all questions.    
+- Work independently and make sure your code is reproducible.    
+
+```{r, message=FALSE}
+library(tidyverse)
+library(dplyr)
+library(aod)
+```
+
+```{r, message=FALSE}
+msleep <- glimpse(msleep)
+storms <- storms
+lizards <- lizards
+head(msleep)
+head(storms)
+head(lizards)
+```
+
+### Mammals sleep dataset (msleep)   
+1. Use filter() to subset msleep to only animals who are awake for at least 12 hours of the day.
+```{r, message=FALSE}
+msleep %>%
+  filter(awake >= 12)
+```
+
+2. Use mutate() to create a new column called percent_day_awake that gives the percentage of the day that each species spends awake. Use select() with everything() at the end to verify your calculation.
+```{r, message=FALSE}
+msleep %>%
+  mutate(percent_day_awake = ((awake/24) * 100)) %>% 
+  select(percent_day_awake, everything())
+```
+
+### Storm tracks data (storms)
+4. Use filter() to subset storms to only storms with wind speeds greater than 50 knots, then use arrange() to sort by wind descending.
+```{r, message=FALSE}
+storms %>%
+  filter(wind>50) %>% 
+  arrange(desc(wind))
+```
+
+### A Comparison of Site Preferences of Two Species of Lizard (lizards)   
+5. Determine which Site and Diameter combination has the highest total grahami.
+
+```{r, message=FALSE}
+lizards %>% 
+  group_by(Site, Diameter) %>% 
+  summarise(sum_grahami = sum(grahami)) %>% 
+  arrange(desc(sum_grahami))
+```
+
+6. Identify which Time of day has the highest average opalinus count.
+
+
+```{r, message=FALSE}
+lizards %>% 
+  group_by(Time) %>% 
+  summarise(opalinus_ave = mean(opalinus)) %>% 
+  arrange(desc(opalinus_ave))
+```
+
+
+
+
+
+
+
+
+
+
+
