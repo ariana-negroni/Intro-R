@@ -37,4 +37,6 @@ MD Anderson de la Universidad de Texas.
 [Tarea 3](Rtutorials/R-tutorials-3.html)    
 [Exam Practice](Rtutorials\ExamPractice.html)    
 [Exam Practice2](Rtutorials\ExamPractice2.html)    
-[Midterm](Rtutorials\Midterm.html)
+[Midterm](Rtutorials\Midterm.html)   
+[Tarea 4](Rtutorials/R-tutorials-4.html)
+
