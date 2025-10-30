@@ -36,3 +36,40 @@ kable(head(diabetes,5), booktabs = TRUE) %>%
   kable_styling(bootstrap_options = "striped", full_width=F)
 ```
 
+
+Para señalar solo las columnas deseadas:
+```{r}
+kable(head(diabetes[2:4],5), booktabs = TRUE) %>% 
+  kable_styling(font_size = 12) %>% 
+  kable_styling(bootstrap_options = "striped", full_width=F)
+```
+
+Changing position
+```{r}
+kable(head(diabetes[,4:5]), booktabs = TRUE) %>% 
+  kable_styling(font_size = 12, position = "left") %>% 
+  kable_styling(bootstrap_options = "striped", full_width=F)
+```
+
+Adding headers
+```{r}
+kable(head(diabetes, 5), booktabs = TRUE) %>% 
+  kable_styling(font_size = 12, position = "left") %>% 
+  kable_styling(bootstrap_options = "striped", full_width=F) %>% 
+  add_header_above(c("Personal data" = 4, "Blood Profile"=10))
+```
+
+```{r}
+kable(diabetes, digits=2,format = "html", row.names = TRUE) %>% 
+  kable_styling(bootstrap_options = c("striped"), full_width = T, font_size = 15) %>% 
+  scroll_box(height = "300px")
+```
+
+
+Nuevo paquete
+```{r}
+diabetes %>% 
+  dplyr::select(ID, No_Pation, Gender, AGE) %>% 
+  gt_preview()
+```
+

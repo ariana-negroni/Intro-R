@@ -1,0 +1,70 @@
+---
+title: "R Tutorial 4 "
+subtitle: 'BIOL 4994/4991'
+author: "Ariana Negroni Santiago"
+date: "Last compiled on `r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
+---
+
+## Instructions
+- This assignment consists of uploading a plot and a brief paragraph (~250 words) summarizing your findings.
+- In your paragraph, include the background of the data, what you did, how you did it, and what you found. 
+- Submit your HTML file exported/knit from the .Rmd. Do not submit screenshots unless requested. 
+- Your paragraph should briefly summarize your workflow and findings. For example: I analyzed the data of tyre performance. I visualized it using ggplot() and then ran a one-way ANOVA. We checked for normality of residuals and found that the residuals were approximately normally distributed. I ran a Tukey post-hoc test. I found that the high-performance tyres were Brand X, and the lower-performance tyres were Brand Y and Z.
+
+
+```{r, Warnings=FALSE}
+setwd("~/Pre-medica/Quinto año/R/Intro_R/Intro-R/Rtutorials")
+library(ggplot2)
+library(dplyr)
+library(car)
+tyre <- read.csv("tyre.csv")
+```
+
+```{r}
+color <- c("orange", "purple", "lightgreen", "darkred")
+ggplot(tyre, aes(x = Brands, y = Mileage)) + 
+  geom_boxplot(aes(fill = Brands)) +
+# labels
+  labs(x = "Gomas", y = "Kilometers",
+       title = "Gomas en Puerto Rico") +
+# themes
+  theme_bw() +  
+  theme(plot.title = element_text(size = 20, 
+                                      face ="bold", 
+                                      hjust = 0.5,
+                                      color = "darkred")) +
+  theme(axis.title.y = element_text(size = 14,
+                                    face = "plain"),
+        axis.text.y = element_text(size = 14,
+                                   color = "black")) +
+  theme(axis.title.x = element_text(size = 14,
+                                    face = "plain"),
+        axis.text.x = element_text(size = 14,
+                                   color = "black")) +
+  theme(legend.title = element_text(size = 18,
+                                    face = "bold")) +
+  theme(legend.text = element_text(size = 14)) +
+  theme(legend.position = 'none') +
+  ylim(20,50)
+# theme_minimal()
+```
+
+```{r, Warning=FALSE}
+#ANOVA one way
+mod <- aov(Mileage ~ Brands, data = tyre)
+summary(mod)
+
+resid_anova <- residuals(mod)
+resid_anova
+
+shapiro.test(resid_anova)
+
+leveneTest(Mileage ~ Brands, data = tyre)
+
+TukeyHSD(mod)
+```
+
