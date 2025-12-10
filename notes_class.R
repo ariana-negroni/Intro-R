@@ -176,3 +176,10 @@ mod <- summary(lm(log(PE)~log(GRP), data = tvshows))
 resid <- resid(mod)
 shapiro.test(resid)
 
+
+# save plot ---------------------------------------------------------------
+
+p
+ggsave(filename = "plot",
+       plot = p,
+       width = 8, height = 6, dpi = 300)

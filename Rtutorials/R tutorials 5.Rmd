@@ -1,0 +1,79 @@
+---
+title: "R Tutorial 5 "
+subtitle: 'BIOL 4994/4991'
+author: "Ariana Negroni Santiago"
+date: "Last compiled on `r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
+---
+
+## General instructions
+- Make sure that all your R code is visible in your submitted document. I need to see the code for all ggplots you create.   
+- We will be using data from the article: Curtis et al., 2012, Genomic and Transcriptomic Architecture of Breast Tumor. - I am giving you the initial code, the basics to start building a ggplot of Tumor Size vs Type of Breast Surgery.    
+- Be sure to follow R syntax carefully and include all plots requested in the assignment.    
+
+#### Load libraries: 
+- readr, ggplot2 and janitor
+
+```{r}
+library(readr)
+library(ggplot2)
+library(janitor)
+```
+
+#### Load data:
+
+```{r}
+metabric <- read.csv("brca_metabric_clinical_data.csv") %>%
+  clean_names()
+head(metabric[, 1:5]) 
+```
+
+#### Basic ggplot:
+```{r, warning= FALSE}
+ggplot(metabric, aes(x = type_of_breast_surgery,
+                     y = tumor_size,)) +
+  geom_boxplot() 
+```
+
+
+### Question
+##### Choose at least three modifications you think will improve the plot and make it more flexible and creative.
+- Modify the X and Y axis titles.
+```{r, warning= FALSE}
+ggplot(metabric, aes(x = type_of_breast_surgery,
+                     y = tumor_size,)) +
+  geom_boxplot() +
+  labs(title = "Tumor size per Breast Surgery",
+       x = "Type of Breast Surgery",
+       y = "Tumor Size") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+- Change the color of the plot (using fill or color).
+```{r, warning= FALSE}
+ggplot(metabric, aes(x = type_of_breast_surgery,
+                     y = tumor_size)) +
+  geom_boxplot(fill = "orange") +
+  labs(title = "Tumor Size per Breast Surgery",
+       x = "Type of Breast Surgery",
+       y = "Tumor Size") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+- Change the background/theme of the plot.
+```{r, warning= FALSE}
+ggplot(metabric, aes(x = type_of_breast_surgery,
+                     y = tumor_size)) +
+  geom_boxplot(fill = "orange") +
+  labs(title = "Tumor Size per Breast Surgery",
+       x = "Type of Breast Surgery",
+       y = "Tumor Size") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+
