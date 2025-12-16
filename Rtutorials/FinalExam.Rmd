@@ -8,9 +8,93 @@ output:
     theme: tactile
     highlight: github
 ---
+# Instrucciones
+- Este es el examen parcial. Cada pregunta vale 20 puntos.
+- Debe escoger 5 de las 6 preguntas para contestar. Su puntaje máximo será 100 puntos.
+- Es altamente recomendado que todos los resultados, incluidas las tablas y salidas, sean siempre visibles en su documento de R Markdown.
+- El examen se debe realizar y entregar durante el tiempo de clase, es decir, Martes 16 de diciembre, de 3 a 5 pm.
+- Utilice R y los paquetes tidyverse para contestar todas las preguntas.
+- Trabaje de manera independiente y asegúrese de que su código sea reproducible.
 
-```{r setup, include=FALSE}
-
+# Datos
+```{r}
+library(ggplot2)
+library(dplyr)
+library(palmerpenguins)
+data(package = 'palmerpenguins')
+penguins <- penguins
+head(penguins)
 
 ```
+
+## Pregunta 1: 
+#### Crea un gráfico de dispersión usando geom_point() que muestre la relación entre bill_length_mm y bill_depth_mm usando el dataset penguins. Recuerda: data = penguins, x = flipper_length_mm, y = body_mass_g La geometría es geom_point(). El conector es +.
+
+```{r}
+ggplot(penguins, aes(flipper_length_mm, body_mass_g)) +
+  geom_point()
+
+```
+
+## Pregunta 2
+#### Partiendo del gráfico anterior y usando un código similar, modifica el gráfico de dispersión para colorear los puntos por species. Sugerencia: Para asignar color a una variable, incluye color = species dentro de aes().
+
+```{r}
+ggplot(penguins, aes(flipper_length_mm, body_mass_g, color = species)) +
+  geom_point()
+```
+
+## Pregunta 3
+#### Partiendo del gráfico anterior y usando un código similar, modifica el gráfico de dispersión para crear paneles separados por species. Sugerencia: Usa facet_wrap(~ species) para crear un panel por especie.
+
+```{r}
+ggplot(penguins, aes(flipper_length_mm, body_mass_g, color = species)) +
+  geom_point() +
+  facet_wrap(~ species)
+```
+
+## Pregunta 4
+#### Partiendo del gráfico anterior y usando un código similar, añade una línea de suavizado para cada especie. Sugerencia: Usa geom_smooth() y recuerda que color = species debe ir dentro de aes() para que cada especie tenga su propia línea. Puedes usar method = “lm”.
+
+```{r}
+ggplot(penguins, aes(flipper_length_mm, body_mass_g, color = species)) +
+  geom_point() +
+  facet_wrap(~ species) +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+## Pregunta 5
+#### Partiendo del gráfico que creaste en la Pregunta 1, modifícalo para que sea apto para publicación mejorando al menos tres aspectos. Sugerencia: Puedes agregar un título, cambiar el tamaño de los ejes, modificar los nombres de los ejes, cambiar el tamaño de los puntos o añadir una leyenda.
+
+```{r}
+ggplot(penguins, aes(flipper_length_mm, body_mass_g, color = species)) +
+  geom_point() +
+  facet_wrap(~ species) +
+  geom_smooth(method = "lm") +
+  labs(title = "Flipper Length and Body Mass of Penguins by Species",
+       x = "Flipper Lenght (mm)",
+       y = "Body Mass (g)") +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5)) 
+```
+
+## Pregunta 6
+#### Usando el gráfico de dispersión y el resumen del modelo lineal provistos, examina la relación entre flipper_length_mm y body_mass_g en penguins.
+
+```{r}
+mod <- lm(body_mass_g ~ flipper_length_mm, data =
+            penguins)
+summary(mod)
+```
+
+1. ¿Cuál es el valor de R-cuadrado del modelo? 
+- 0.759
+2. ¿Cuál es el p-valor del coeficiente de la pendiente? 
+- 2.2e-16
+3. Basado en el p-valor, ¿hay una relación entre longitud de aletas y masa corporal?
+- Si 
+4. ¿Cuál es el intercepto?
+- -5780.831
+5. ¿Cuál es la pendiente?
+- 49.686
 
