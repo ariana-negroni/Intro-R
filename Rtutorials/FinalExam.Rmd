@@ -75,7 +75,7 @@ ggplot(penguins, aes(flipper_length_mm, body_mass_g, color = species)) +
        x = "Flipper Lenght (mm)",
        y = "Body Mass (g)") +
   theme_bw() +
-  theme(plot.title = element_text(hjust = 0.5)) 
+  theme(legend.position= "none", plot.title = element_text(hjust = 0.5)) 
 ```
 
 ## Pregunta 6
